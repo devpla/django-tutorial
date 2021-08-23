@@ -1,7 +1,7 @@
 ---
 name: Issue Template
 about: Custom issue template
-title: "[type] Title"
+title: "TYPE: Title"
 labels: ''
 assignees: hing9u
 
@@ -19,4 +19,3 @@ assignees: hing9u
 
 ## Comments
 
-- (PR관련 코멘트, 토의할 내용..)
