@@ -13,8 +13,8 @@ $ django-admin startproject {mysite}
 ### 프로젝트 구조
 
 ```
-mysite/                 -- 최상위 디렉토리 (Root)
-	mysite/             -- 프로젝트 중심 앱
+mysite/                 	-- 최상위 디렉토리 (Root)
+	mysite/            	-- 프로젝트 중심 앱
 		__init__.py     -- 디렉토리를 파이썬 패키지로 인식
     	settings.py
 		url.py
