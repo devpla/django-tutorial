@@ -9,6 +9,8 @@
   - 매일 아침 8:40 스크럼 회의
   - 피드백 반영하여 코드 및 문서 수정
 
+<br>
+
 ## Django
 > Django makes it easier to build better Web apps more quickly and with less code.
 
@@ -18,16 +20,17 @@
 - Python 3.9.6
 - Django 3.2.6
 
-
+<br>
 
 ## Docs
 
-|  #   |                      title                       |    date    |
-| :--: | :----------------------------------------------: | :--------: |
-|  01  | [Start Django](docs/01-start_django.md)            | 2021.08.23 |
-|  02  | [Database and Admin](docs/02-database_and_admin.md) | 2021.08.24 |
-|  03  | [Views](docs/03-views.md)                          | 2021.08.24 |
+|  #   |                        Title                        |                          Daily log                           |    Date    |
+| :--: | :-------------------------------------------------: | :----------------------------------------------------------: | :--------: |
+|  01  |       [Start Django](docs/01-start_django.md)       | [![](assets/ul.svg)](https://github.com/hing9u/django-tutorial/discussions/12) | 2021.08.23 |
+|  02  | [Database and Admin](docs/02-database_and_admin.md) | [![](assets/ul.svg)](https://github.com/hing9u/django-tutorial/discussions/22) | 2021.08.24 |
+|  03  |              [Views](docs/03-views.md)              | [![](assets/ul.svg)](https://github.com/hing9u/django-tutorial/discussions/22) | 2021.08.24 |
 
+<br>
 
 ## Reference
 https://docs.djangoproject.com/ko/3.2/intro/
