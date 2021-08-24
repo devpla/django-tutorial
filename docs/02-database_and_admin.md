@@ -76,7 +76,7 @@
   ```
   
 - 각 데이터베이스 필드를 `Field` 클래스의 인스턴스로 표현
-- `ForeignKey()` : 왜래키 참조
+- `ForeignKey()` : 외래키 참조
 
 <br>
 
@@ -116,7 +116,7 @@ CREATE INDEX "polls_choice_question_id_c5b4b260" ON "polls_choice" ("question_id
 COMMIT;
 ```
 
-- 데이터베이스 모델 관련 테이블 생성하기 (변경사항 데이트베이스에 적용)
+- 데이터베이스 모델 관련 테이블 생성하기 (변경사항 데이터베이스에 적용)
 ```bash
 $ python manage.py migrate
 Operations to perform:
@@ -260,3 +260,29 @@ In [20]: c.delete()
 Out[20]: (1, {'polls.Choice': 1})
 ```
 
+## 관리자 생성하기
+```bash
+$ python manage.py createsuperuser
+Username (leave blank to use 'user'): admin
+Email address: chaeyeonhee@kakao.com
+Password:
+Password (again):
+Superuser created successfully.
+```
+
+<br>
+
+- 개발 서버 : http://127.0.0.1:8000/admin/
+```bash
+- $ python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+August 24, 2021 - 19:56:57
+Django version 3.2.6, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[24/Aug/2021 19:57:21] "GET /admin/ HTTP/1.1" 302 0
+...
+```
