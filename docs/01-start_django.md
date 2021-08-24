@@ -44,6 +44,7 @@ $ python manage.py runserver
 $ python manage.py runserver {ip:port}
 ```
 
+- 개발 서버 : http://127.0.0.1:8000/
 
 
 ## 앱 생성하기
@@ -107,3 +108,5 @@ urlpatterns = [
 ]
 ```
 
+- `include()` : 다른 URL 패턴을 포함할 때 참조할 수 있도록 도와주는 함수
+- `path()` 의 인수 `route()` : URL 패턴을 가진 문자열
