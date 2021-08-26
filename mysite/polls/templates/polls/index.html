@@ -1,9 +1,61 @@
-{% if latest_question_list %}
-  <ul>
-    {% for question in latest_question_list %}
-      <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>No polls are available.</p>
-{% endif %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% load static %}
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.png' %}" />
+  <title>My First Django - Polls</title>
+</head>
+<body class="my-bg">
+  <div class="m-9 mx-auto text-5xl font-extrabold text-center">
+    <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-50 to-blue-50">
+      Question List
+    </span>
+  </div>
+  <div class="my-6 max-w-lg mx-auto bg-white text-indigo-900 rounded-xl shadow-md space-x-4 my-box">
+    <div>
+      <table class="table-fixed text-center w-full">
+        <thead>
+        <tr class="thead-dark leading-loose my-th my-br"> <!-- rounded-t-xl -->
+            <th class="w-2/12">#</th>
+            <th class="w-4/12">Title</th>
+            <th class="w-3/12">Date</th>
+            <th class="w-3/12"> </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if latest_question_list %}
+        {% for question in latest_question_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+                <a class="font-bold" href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+            </td>
+            <td>{{ question.pub_date | date:"Y-m-d"}}</td>
+            <td>
+                <a href="{% url 'polls:detail' question.id %}">
+                  <button class="my-2 py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-indigo-500 hover:bg-indigo-700">
+                    Vote
+                  </button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="3">질문이 없습니다.</td>
+        </tr>
+        {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+<p class="text-center text-gray-50 text-xs">
+  ⓒ 2021 Hing9u. All Rights Reserved.
+</p>
+</body>
+</html>
