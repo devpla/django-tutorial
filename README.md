@@ -45,7 +45,7 @@
 장고 스터디를 함께 하며 피드백을 공유한 👨‍💻
 - [seokzin](https://github.com/seokzin/django)
 - [chaselover](https://github.com/chaselover/djangoPractice)
-- [en-kyu](https://github.com/ed-kyu/django)
+- [ed-kyu](https://github.com/ed-kyu/django)
 - [Yoonbaek](https://github.com/YoonBaek/django)
 - [emoralVisionary](https://github.com/emoralVisionary/django-101)
 - [zerossy](https://github.com/zerossy/django-tutorial)
