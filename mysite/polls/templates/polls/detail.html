@@ -25,9 +25,12 @@
               <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br><br>
           {% endfor %}
       </fieldset>
-      <p class="mt-6">
-        <input type="submit" value="Vote" class="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-indigo-500 hover:bg-indigo-600">
-      </p>
+      <div class="grid grid-cols-2 gap-4 mt-9">
+        <input type="submit" value="Vote" class="rounded-lg shadow-md text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 font-semibold text-center">
+        <a href="{% url 'polls:index' %}" class="rounded-lg shadow-md text-white my-th hover:bg-white hover:bg-opacity-30 py-2 px-4 font-semibold text-center">
+            Back
+        </a>
+      </div>
       </form>
     </div>
   </div>

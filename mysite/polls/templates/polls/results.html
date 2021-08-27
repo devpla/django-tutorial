@@ -20,25 +20,23 @@
   <div class="mt-9 text-indigo-900">
     <ul>
     {% for choice in question.choice_set.all %}
-      <li>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="#ffffff88">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <span class="font-bold">{{ choice.choice_text }}</span> -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li><br>
+      <li class="flex w-3/5">
+        <div class="font-bold flex-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="#ffffff88">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          {{ choice.choice_text }}</div>
+        <div class="flex-none">-- {{ choice.votes }} vote{{ choice.votes|pluralize }}</div></li><br>
     {% endfor %}
     </ul>
-    <p class="mt-6">
-      <a href="{% url 'polls:detail' question.id %}">
-        <button class="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-indigo-500 hover:bg-indigo-600">
-          Vote again?
-        </button>
+    <div class="grid grid-cols-2 gap-4 mt-9">
+      <a href="{% url 'polls:pie-chart' question.id %}" class="rounded-lg shadow-md text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 font-semibold text-center">
+          Show Me Chart
       </a>
-      <a href="{% url 'polls:index' %}">
-        <button class="py-2 px-4 font-semibold rounded-lg shadow-md text-white my-th hover:bg-white hover:bg-opacity-30">
+      <a href="{% url 'polls:index' %}" class="rounded-lg shadow-md text-white my-th hover:bg-white hover:bg-opacity-30 py-2 px-4 font-semibold text-center">
           Home
-        </button>
       </a>
-    </p>
+    </div>
   </div>
 </div>
 <p class="mt-6 text-center text-gray-50 text-xs">
