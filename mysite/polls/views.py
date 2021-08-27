@@ -57,3 +57,41 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+
+# class ChartView(generic.DetailView):
+#     model = Question
+#     template_name = 'polls/pie_chart.html'
+#
+#     def pie_chart(self, **kwargs):
+#         labels = []
+#         data = []
+#
+#         question = super(ChartView, self).get_object()
+#
+#         for choice in question.choice_set.all():
+#             labels.append(choice.choice_text)
+#             data.append(choice.votes)
+#
+#         return render(request, 'polls/pie_chart.html', {
+#             'labels': labels,
+#             'data': data,
+#         })
+
+def pie_chart(request, question_id):
+    labels = []
+    data = []
+
+    question = get_object_or_404(Question, pk=question_id)
+    question_text = question.question_text
+
+    for choice in question.choice_set.all():
+        labels.append(choice.choice_text)
+        data.append(choice.votes)
+
+    return render(request, 'polls/pie_chart.html', {
+        'labels': labels,
+        'data': data,
+        'question_text': question_text,
+        'question_id' : question_id
+    })

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% load static %}
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.png' %}" />
+  <title>My First Django - Polls</title>
+</head>
+<body class="my-bg">
+  <div class="mt-9 p-6 max-w-lg mx-auto rounded-xl shadow-md my-box">
+    <div class="mx-auto text-3xl font-extrabold text-center">
+      <h1 class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-800">
+        {{ question_text }}
+      </h1>
+    </div>
+    <div class="mt-9 text-indigo-900">
+    {% block content %}
+      <div id="container">
+        <canvas id="pie_chart"></canvas>
+      </div>
+
+      <script>
+        var config = {
+          type: 'doughnut',
+          data: {
+            datasets: [{
+              data: {{ data|safe }},
+              backgroundColor: [
+                  '#4F46E5',
+                  '#4F46E577',
+                  '#4F46E555',
+                  '#4F46E533',
+
+              ],
+              label: 'votes',
+              labelColor: '#ffffff',
+              borderWidth: 0
+            }],
+            labels: {{ labels|safe }}
+          },
+          options: {
+            responsive: true,
+          }
+        };
+
+        window.onload = function() {
+          var ctx = document.getElementById('pie_chart').getContext('2d');
+          window.myPie = new Chart(ctx, config);
+        };
+
+      </script>
+    {% endblock %}
+    </div>
+    <div class="grid grid-cols-2 gap-4 mt-9">
+      <a href="{% url 'polls:detail' question_id %}" class="rounded-lg shadow-md text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 font-semibold text-center">
+          Vote again?
+      </a>
+      <a href="{% url 'polls:index' %}" class="rounded-lg shadow-md text-white my-th hover:bg-white hover:bg-opacity-30 py-2 px-4 font-semibold text-center">
+          Home
+      </a>
+    </div>
+
+  </div>
+  <p class="mt-6 text-center text-gray-50 text-xs">
+    ⓒ 2021 Hing9u. All Rights Reserved.
+  </p>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</body>
+</html>
