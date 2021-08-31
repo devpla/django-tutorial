@@ -6,7 +6,7 @@
 
 [Django Documentation Tutorial](https://docs.djangoproject.com/ko/3.2/intro/)을 따라가며 코드 및 배운 내용을 기록합니다.
 
-튜토리얼과 동일하게 간단한 **설문조사 앱**을 제작하는 프로젝트입니다. 프론트엔드는 Tailwind를 사용해 따로 커스텀했습니다.
+튜토리얼과 동일하게 간단한 **설문조사 앱**을 제작하는 프로젝트입니다. 프론트엔드는 Tailwind를 사용했습니다.
 
 - **기간** : 2021.08.23 ~ 2021.08.27
 - **목적** : Django 프레임워크 기본 기능 익히기 / Github Issue 및 PR에 익숙해지기
